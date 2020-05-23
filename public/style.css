@@ -1,0 +1,28 @@
+/* --- Reset --- */ 
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+/* --- Utilities ---- */ 
+
+body {
+    background: url('space.jpg') no-repeat center center/cover;
+
+}
+
+
+/* --- Nav Bar --- */ 
+
+#nav-bar {
+    background-color: #563d7c;
+    opacity: 0.5;
+    border-bottom: 1px solid white;
+}
+
+
+
+/* --- Showcase Home Section --- */ 
+

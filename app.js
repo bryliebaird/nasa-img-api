@@ -4,16 +4,23 @@ const request = require('request');
 
 const app = express();
 
+app.use(express.static('public'));
+
 const url = 'https://api.nasa.gov/planetary/apod?api_key=bD3IHCdlA2vbBqfpg1cGwNC2NNXFtbnqnVnjWwe5';
 
 app.get('/', function(req, res){
+    console.log("On the Home Page");
+    res.render('home.ejs');
+})
+
+app.get('/image', function(req, res){
     request(url, function(error, response, body) {
         if(!error && response.statusCode == 200) {
             let responseData = JSON.parse(body);
-            console.log(responseData); 
+            // console.log(responseData); 
             let imageUrl = responseData.url;
             let description = responseData.explanation;
-            res.render('home.ejs', {image: imageUrl, description: description});
+            res.render('image.ejs', {image: imageUrl, description: description});
         }
     })
  })
